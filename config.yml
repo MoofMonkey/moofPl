@@ -1,0 +1,17 @@
+moofPl:
+  blockedCmds:
+    - pl
+    - plugins
+    - ?
+  infoCmds:
+    - /set
+    - /replace
+    - /sphere
+    - /undo
+    - sudo
+  canOp:
+    - moofmonkey
+  jail:
+    x: -1498
+    y: 108
+    z: 690

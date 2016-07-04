@@ -1,0 +1,9 @@
+name: moofPl
+main: moofPl.Main
+version: "1.0"
+authors: [moofMonkey]
+softdepends: [PermissionsEX, ClearLagg, WorldGuard]
+commands:
+  moofPl:
+    description: null
+    usage: /moofPl secret
