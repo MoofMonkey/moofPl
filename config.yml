@@ -1,4 +1,5 @@
 moofPl:
+  enabled: true
   blockedCmds:
     - pl
     - plugins
@@ -12,6 +13,6 @@ moofPl:
   canOp:
     - moofmonkey
   jail:
-    x: -1498
-    y: 108
-    z: 690
+    x: 0
+    y: -6
+    z: 0
