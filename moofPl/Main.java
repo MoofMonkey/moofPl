@@ -119,7 +119,7 @@ public class Main extends JavaPlugin {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("[moofPl] moofPl " + (getConfig().getBoolean("moofPl.enabled") ? "enabled" : "disabled"));
+		System.out.println("[moofPl] moofPl " + (getConfig().getBoolean("moofPl.enabled", true) ? "enabled" : "disabled"));
 		setEnabled(getConfig().getBoolean("moofPl.enabled"));
 		blockedCmds = getConfig().getStringList("moofPl.blockedCmds");
 		infoCmds = getConfig().getStringList("moofPl.infoCmds");
