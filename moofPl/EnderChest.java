@@ -20,20 +20,20 @@ public class EnderChest implements Serializable {
 	public String slName;
 
 	/**
-	 * Генератор нового объекта этого класса
+	 * Р“РµРЅРµСЂР°С‚РѕСЂ РЅРѕРІРѕРіРѕ РѕР±СЉРµРєС‚Р° СЌС‚РѕРіРѕ РєР»Р°СЃСЃР°
 	 *
 	 * @param x
-	 *            - X координата
+	 *            - X РєРѕРѕСЂРґРёРЅР°С‚Р°
 	 * @param y
-	 *            - Y координата
+	 *            - Y РєРѕРѕСЂРґРёРЅР°С‚Р°
 	 * @param z
-	 *            - Z координата
+	 *            - Z РєРѕРѕСЂРґРёРЅР°С‚Р°
 	 * @param world
-	 *            - мир
+	 *            - РјРёСЂ
 	 * @param name
-	 *            - имя сундука
+	 *            - РёРјСЏ СЃСѓРЅРґСѓРєР°
 	 * @param access
-	 *            - список игроков имеющих доступ к сундуку
+	 *            - СЃРїРёСЃРѕРє РёРіСЂРѕРєРѕРІ РёРјРµСЋС‰РёС… РґРѕСЃС‚СѓРї Рє СЃСѓРЅРґСѓРєСѓ
 	 */
 	public EnderChest(long x2, long y2, long z2, String world2, String name2, List<String> access2, int slots,
 			String slName2) {
@@ -41,7 +41,7 @@ public class EnderChest implements Serializable {
 		y = y2;
 		z = z2;
 		world = world2;
-		name = name2.replaceAll("_", " ").replaceAll("=", "§");
+		name = name2.replaceAll("_", " ").replaceAll("=", "В§");
 		access = access2;
 		inv = Bukkit.createInventory(null, slots, name);
 		slName = slName2;
@@ -59,7 +59,7 @@ public class EnderChest implements Serializable {
 			return false;
 		if (!canAccess(p)) /*
 							 * { System.out.println(p.getName() +
-							 * " пытался получить доступ к админскому эндеру!");
+							 * " РїС‹С‚Р°Р»СЃСЏ РїРѕР»СѓС‡РёС‚СЊ РґРѕСЃС‚СѓРї Рє Р°РґРјРёРЅСЃРєРѕРјСѓ СЌРЅРґРµСЂСѓ!");
 							 */
 			return false;
 		/* } */ else {
@@ -69,15 +69,15 @@ public class EnderChest implements Serializable {
 	}
 
 	/**
-	 * Возращает этот объект в строке, но не сохраняет список canAccess и
-	 * метадату предметов.
+	 * Р’РѕР·СЂР°С‰Р°РµС‚ СЌС‚РѕС‚ РѕР±СЉРµРєС‚ РІ СЃС‚СЂРѕРєРµ, РЅРѕ РЅРµ СЃРѕС…СЂР°РЅСЏРµС‚ СЃРїРёСЃРѕРє canAccess Рё
+	 * РјРµС‚Р°РґР°С‚Сѓ РїСЂРµРґРјРµС‚РѕРІ.
 	 * 
-	 * @return Возращает этот объект
+	 * @return Р’РѕР·СЂР°С‰Р°РµС‚ СЌС‚РѕС‚ РѕР±СЉРµРєС‚
 	 */
 	@SuppressWarnings("deprecation")
 	@Override
 	public String toString() {
-		String s = name.replaceAll(" ", "_").replaceAll("§", "=") + "$" + world + "$" + x + "$" + y + "$" + z + "$"
+		String s = name.replaceAll(" ", "_").replaceAll("В§", "=") + "$" + world + "$" + x + "$" + y + "$" + z + "$"
 				+ inv.getSize();
 		for (ItemStack i : inv.getContents())
 			if (i != null)

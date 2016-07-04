@@ -28,10 +28,10 @@ public class Handlers extends Thread implements Listener {
 	Passwords pwds;
 
 	/**
-	 * Генератор нового объекта этого класса
+	 * Р“РµРЅРµСЂР°С‚РѕСЂ РЅРѕРІРѕРіРѕ РѕР±СЉРµРєС‚Р° СЌС‚РѕРіРѕ РєР»Р°СЃСЃР°
 	 *
 	 * @param main
-	 *            - главный класс. Служит для получения пути к папке плагина.
+	 *            - РіР»Р°РІРЅС‹Р№ РєР»Р°СЃСЃ. РЎР»СѓР¶РёС‚ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ РїСѓС‚Рё Рє РїР°РїРєРµ РїР»Р°РіРёРЅР°.
 	 */
 	public Handlers(Main main) {
 		this.main = main;
@@ -39,11 +39,11 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Получает игрока с помощью его ника
+	 * РџРѕР»СѓС‡Р°РµС‚ РёРіСЂРѕРєР° СЃ РїРѕРјРѕС‰СЊСЋ РµРіРѕ РЅРёРєР°
 	 *
 	 * @param name
-	 *            - ник
-	 * @return null, если игрок не в сети
+	 *            - РЅРёРє
+	 * @return null, РµСЃР»Рё РёРіСЂРѕРє РЅРµ РІ СЃРµС‚Рё
 	 */
 	public Player getPlayer(String name) {
 		for (PlayerLogger PL : pl)
@@ -54,11 +54,11 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Проверяет - заключён-ли игрок
+	 * РџСЂРѕРІРµСЂСЏРµС‚ - Р·Р°РєР»СЋС‡С‘РЅ-Р»Рё РёРіСЂРѕРє
 	 *
 	 * @param p
-	 *            - игрок которого нужно проверить
-	 * @return true, если игрок заключён
+	 *            - РёРіСЂРѕРє РєРѕС‚РѕСЂРѕРіРѕ РЅСѓР¶РЅРѕ РїСЂРѕРІРµСЂРёС‚СЊ
+	 * @return true, РµСЃР»Рё РёРіСЂРѕРє Р·Р°РєР»СЋС‡С‘РЅ
 	 */
 	public boolean isJailed(Player p) {
 		for (Jail i : main.jls)
@@ -69,7 +69,7 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Вызывается при выключении сервера/плагина
+	 * Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё РІС‹РєР»СЋС‡РµРЅРёРё СЃРµСЂРІРµСЂР°/РїР»Р°РіРёРЅР°
 	 *
 	 * @throws Throwable
 	 */
@@ -80,10 +80,10 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Вызывается при любом взрыве
+	 * Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё Р»СЋР±РѕРј РІР·СЂС‹РІРµ
 	 *
 	 * @param event
-	 *            - передаёт событие
+	 *            - РїРµСЂРµРґР°С‘С‚ СЃРѕР±С‹С‚РёРµ
 	 */
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onExplode(EntityExplodeEvent event) {
@@ -91,10 +91,10 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Вызывается при взаимодействии игрока с блоком
+	 * Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёРё РёРіСЂРѕРєР° СЃ Р±Р»РѕРєРѕРј
 	 *
 	 * @param event
-	 *            - передаёт событие
+	 *            - РїРµСЂРµРґР°С‘С‚ СЃРѕР±С‹С‚РёРµ
 	 */
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onInteract(PlayerInteractEvent event) {
@@ -135,10 +135,10 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Вызывается при отправлении игроком сообщения
+	 * Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё РѕС‚РїСЂР°РІР»РµРЅРёРё РёРіСЂРѕРєРѕРј СЃРѕРѕР±С‰РµРЅРёСЏ
 	 *
 	 * @param event
-	 *            - передаёт событие
+	 *            - РїРµСЂРµРґР°С‘С‚ СЃРѕР±С‹С‚РёРµ
 	 */
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerChat(AsyncPlayerChatEvent event) {
@@ -166,10 +166,10 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Вызывается перед всеми onCommand(). Служит для отслеживания команд
+	 * Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїРµСЂРµРґ РІСЃРµРјРё onCommand(). РЎР»СѓР¶РёС‚ РґР»СЏ РѕС‚СЃР»РµР¶РёРІР°РЅРёСЏ РєРѕРјР°РЅРґ
 	 *
 	 * @param event
-	 *            - передаёт событие
+	 *            - РїРµСЂРµРґР°С‘С‚ СЃРѕР±С‹С‚РёРµ
 	 */
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
@@ -239,10 +239,10 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Вызывается при заходе игрока
+	 * Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё Р·Р°С…РѕРґРµ РёРіСЂРѕРєР°
 	 *
 	 * @param event
-	 *            - передаёт событие
+	 *            - РїРµСЂРµРґР°С‘С‚ СЃРѕР±С‹С‚РёРµ
 	 */
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerJoin(PlayerJoinEvent event) {
@@ -275,10 +275,10 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Вызывается при выходе игрока
+	 * Р’С‹Р·С‹РІР°РµС‚СЃСЏ РїСЂРё РІС‹С…РѕРґРµ РёРіСЂРѕРєР°
 	 *
 	 * @param event
-	 *            - передаёт событие
+	 *            - РїРµСЂРµРґР°С‘С‚ СЃРѕР±С‹С‚РёРµ
 	 */
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerQuit(PlayerQuitEvent event) {
@@ -299,10 +299,10 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Освобождает игрока из тюрьмы
+	 * РћСЃРІРѕР±РѕР¶РґР°РµС‚ РёРіСЂРѕРєР° РёР· С‚СЋСЂСЊРјС‹
 	 *
 	 * @param p
-	 *            - игрок
+	 *            - РёРіСЂРѕРє
 	 */
 	public boolean unJail(Player p) {
 		if (isJailed(p)) {
@@ -316,7 +316,7 @@ public class Handlers extends Thread implements Listener {
 	}
 
 	/**
-	 * Освобождает всех игроков из всех тюрем
+	 * РћСЃРІРѕР±РѕР¶РґР°РµС‚ РІСЃРµС… РёРіСЂРѕРєРѕРІ РёР· РІСЃРµС… С‚СЋСЂРµРј
 	 */
 	public void unJailAll() {
 		for (Jail j : main.jls)

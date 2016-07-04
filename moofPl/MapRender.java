@@ -44,10 +44,10 @@ public class MapRender extends MapRenderer {
 	int i = 0;
 
 	/**
-	 * Генератор нового объекта этого класса
+	 * Р“РµРЅРµСЂР°С‚РѕСЂ РЅРѕРІРѕРіРѕ РѕР±СЉРµРєС‚Р° СЌС‚РѕРіРѕ РєР»Р°СЃСЃР°
 	 *
 	 * @param img2
-	 *            - картинка для карты
+	 *            - РєР°СЂС‚РёРЅРєР° РґР»СЏ РєР°СЂС‚С‹
 	 */
 	public MapRender(BufferedImage img2) {
 		img = img2;

@@ -18,11 +18,11 @@ import ru.tehkode.permissions.bukkit.PermissionsEx;
 public class Utils {
 
 	/**
-	 * Проверяет статус оператора у игрока
+	 * РџСЂРѕРІРµСЂСЏРµС‚ СЃС‚Р°С‚СѓСЃ РѕРїРµСЂР°С‚РѕСЂР° Сѓ РёРіСЂРѕРєР°
 	 *
 	 * @param pl
-	 *            - игрок которого нужно проверить
-	 * @return true, если игрок имеет статус оператора и прописан в конфигурации
+	 *            - РёРіСЂРѕРє РєРѕС‚РѕСЂРѕРіРѕ РЅСѓР¶РЅРѕ РїСЂРѕРІРµСЂРёС‚СЊ
+	 * @return true, РµСЃР»Рё РёРіСЂРѕРє РёРјРµРµС‚ СЃС‚Р°С‚СѓСЃ РѕРїРµСЂР°С‚РѕСЂР° Рё РїСЂРѕРїРёСЃР°РЅ РІ РєРѕРЅС„РёРіСѓСЂР°С†РёРё
 	 */
 	public static boolean checkOp(Player pl) {
 		boolean canOp = false;
@@ -47,11 +47,11 @@ public class Utils {
 	}
 
 	/**
-	 * Создаёт новую карту с изображением
+	 * РЎРѕР·РґР°С‘С‚ РЅРѕРІСѓСЋ РєР°СЂС‚Сѓ СЃ РёР·РѕР±СЂР°Р¶РµРЅРёРµРј
 	 *
 	 * @param image
-	 *            - картинка
-	 * @return ID Карты
+	 *            - РєР°СЂС‚РёРЅРєР°
+	 * @return ID РљР°СЂС‚С‹
 	 */
 	@SuppressWarnings("deprecation")
 	public static short createNewMap(BufferedImage image) {
@@ -67,21 +67,21 @@ public class Utils {
 	}
 
 	/**
-	 * Создаёт новые предметы. Поддерживает цветовые коды.
+	 * РЎРѕР·РґР°С‘С‚ РЅРѕРІС‹Рµ РїСЂРµРґРјРµС‚С‹. РџРѕРґРґРµСЂР¶РёРІР°РµС‚ С†РІРµС‚РѕРІС‹Рµ РєРѕРґС‹.
 	 *
 	 * @param name
-	 *            - имя предмета
+	 *            - РёРјСЏ РїСЂРµРґРјРµС‚Р°
 	 * @param lore
-	 *            - описание предмета. 1NS2 - разделитель строк
+	 *            - РѕРїРёСЃР°РЅРёРµ РїСЂРµРґРјРµС‚Р°. 1NS2 - СЂР°Р·РґРµР»РёС‚РµР»СЊ СЃС‚СЂРѕРє
 	 * @param id
-	 *            - ID предмета
+	 *            - ID РїСЂРµРґРјРµС‚Р°
 	 * @param meta
-	 *            - ПодID предмета
-	 * @return Готовый предмет
+	 *            - РџРѕРґID РїСЂРµРґРјРµС‚Р°
+	 * @return Р“РѕС‚РѕРІС‹Р№ РїСЂРµРґРјРµС‚
 	 */
 	public static ItemStack getItemStack(String name, String lore, int id, int meta) {
-		name = name.replaceAll("_", " ").replaceAll("&", "§");
-		lore = lore.replaceAll("_", " ").replaceAll("&", "§");
+		name = name.replaceAll("_", " ").replaceAll("&", "В§");
+		lore = lore.replaceAll("_", " ").replaceAll("&", "В§");
 		@SuppressWarnings("deprecation")
 		Material material = Material.getMaterial(id);
 		ItemStack item = new ItemStack(material, 64);
@@ -94,21 +94,21 @@ public class Utils {
 	}
 
 	/**
-	 * Создаёт новые предметы. Поддерживает цветовые коды.
+	 * РЎРѕР·РґР°С‘С‚ РЅРѕРІС‹Рµ РїСЂРµРґРјРµС‚С‹. РџРѕРґРґРµСЂР¶РёРІР°РµС‚ С†РІРµС‚РѕРІС‹Рµ РєРѕРґС‹.
 	 *
 	 * @param name
-	 *            - имя предмета
+	 *            - РёРјСЏ РїСЂРµРґРјРµС‚Р°
 	 * @param lore
-	 *            - описание предмета. 1NS2 - разделитель строк
+	 *            - РѕРїРёСЃР°РЅРёРµ РїСЂРµРґРјРµС‚Р°. 1NS2 - СЂР°Р·РґРµР»РёС‚РµР»СЊ СЃС‚СЂРѕРє
 	 * @param id
-	 *            - Материал предмета
+	 *            - РњР°С‚РµСЂРёР°Р» РїСЂРµРґРјРµС‚Р°
 	 * @param meta
-	 *            - ПодID предмета
-	 * @return Готовый предмет
+	 *            - РџРѕРґID РїСЂРµРґРјРµС‚Р°
+	 * @return Р“РѕС‚РѕРІС‹Р№ РїСЂРµРґРјРµС‚
 	 */
 	public static ItemStack getItemStack(String name, String lore, Material material, int meta) {
-		name = name.replaceAll("_", " ").replaceAll("&", "§");
-		lore = lore.replaceAll("_", " ").replaceAll("&", "§");
+		name = name.replaceAll("_", " ").replaceAll("&", "В§");
+		lore = lore.replaceAll("_", " ").replaceAll("&", "В§");
 		ItemStack item = new ItemStack(material, 64);
 		ItemMeta itemMeta = item.getItemMeta();
 		itemMeta.setDisplayName(name);
@@ -119,19 +119,19 @@ public class Utils {
 	}
 
 	/**
-	 * Открывает GUI для того, что-бы забрать предметы
+	 * РћС‚РєСЂС‹РІР°РµС‚ GUI РґР»СЏ С‚РѕРіРѕ, С‡С‚Рѕ-Р±С‹ Р·Р°Р±СЂР°С‚СЊ РїСЂРµРґРјРµС‚С‹
 	 *
 	 * @param p
-	 *            - игрок которому нужно открыть GUI
+	 *            - РёРіСЂРѕРє РєРѕС‚РѕСЂРѕРјСѓ РЅСѓР¶РЅРѕ РѕС‚РєСЂС‹С‚СЊ GUI
 	 * @param name
-	 *            - имя предмета
+	 *            - РёРјСЏ РїСЂРµРґРјРµС‚Р°
 	 * @param lore
-	 *            - описание предмета. 1NS2 - разделитель строк
+	 *            - РѕРїРёСЃР°РЅРёРµ РїСЂРµРґРјРµС‚Р°. 1NS2 - СЂР°Р·РґРµР»РёС‚РµР»СЊ СЃС‚СЂРѕРє
 	 * @param id
-	 *            - ID предмета
+	 *            - ID РїСЂРµРґРјРµС‚Р°
 	 * @param meta
-	 *            - ПодID предмета
-	 * @return Готовый предмет
+	 *            - РџРѕРґID РїСЂРµРґРјРµС‚Р°
+	 * @return Р“РѕС‚РѕРІС‹Р№ РїСЂРµРґРјРµС‚
 	 */
 	public static void openMyGUI(Player p, String name, String lore, int id, int meta) {
 		Inventory inv = Bukkit.createInventory(null, 9, "" + ChatColor.BOLD + ChatColor.DARK_AQUA + "Your items:");
@@ -141,19 +141,19 @@ public class Utils {
 	}
 
 	/**
-	 * Открывает GUI для того, что-бы забрать предметы
+	 * РћС‚РєСЂС‹РІР°РµС‚ GUI РґР»СЏ С‚РѕРіРѕ, С‡С‚Рѕ-Р±С‹ Р·Р°Р±СЂР°С‚СЊ РїСЂРµРґРјРµС‚С‹
 	 *
 	 * @param p
-	 *            - игрок которому нужно открыть GUI
+	 *            - РёРіСЂРѕРє РєРѕС‚РѕСЂРѕРјСѓ РЅСѓР¶РЅРѕ РѕС‚РєСЂС‹С‚СЊ GUI
 	 * @param name
-	 *            - имя предмета
+	 *            - РёРјСЏ РїСЂРµРґРјРµС‚Р°
 	 * @param lore
-	 *            - описание предмета. 1NS2 - разделитель строк
+	 *            - РѕРїРёСЃР°РЅРёРµ РїСЂРµРґРјРµС‚Р°. 1NS2 - СЂР°Р·РґРµР»РёС‚РµР»СЊ СЃС‚СЂРѕРє
 	 * @param id
-	 *            - Материал предмета
+	 *            - РњР°С‚РµСЂРёР°Р» РїСЂРµРґРјРµС‚Р°
 	 * @param meta
-	 *            - ПодID предмета
-	 * @return Готовый предмет
+	 *            - РџРѕРґID РїСЂРµРґРјРµС‚Р°
+	 * @return Р“РѕС‚РѕРІС‹Р№ РїСЂРµРґРјРµС‚
 	 */
 	public static void openMyGUI(Player p, String name, String lore, Material id, int meta) {
 		Inventory inv = Bukkit.createInventory(null, 9, "" + ChatColor.BOLD + ChatColor.DARK_AQUA + "Your items:");
@@ -163,13 +163,13 @@ public class Utils {
 	}
 
 	/**
-	 * Отправляет операторам команду (запрещённую/информирующую)
+	 * РћС‚РїСЂР°РІР»СЏРµС‚ РѕРїРµСЂР°С‚РѕСЂР°Рј РєРѕРјР°РЅРґСѓ (Р·Р°РїСЂРµС‰С‘РЅРЅСѓСЋ/РёРЅС„РѕСЂРјРёСЂСѓСЋС‰СѓСЋ)
 	 *
 	 * @param player
-	 *            - игрок который написал команду (используется для получения
-	 *            имени и исключения из списка для отправления)
+	 *            - РёРіСЂРѕРє РєРѕС‚РѕСЂС‹Р№ РЅР°РїРёСЃР°Р» РєРѕРјР°РЅРґСѓ (РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ
+	 *            РёРјРµРЅРё Рё РёСЃРєР»СЋС‡РµРЅРёСЏ РёР· СЃРїРёСЃРєР° РґР»СЏ РѕС‚РїСЂР°РІР»РµРЅРёСЏ)
 	 * @param command
-	 *            - команда которую игрок ввёл
+	 *            - РєРѕРјР°РЅРґР° РєРѕС‚РѕСЂСѓСЋ РёРіСЂРѕРє РІРІС‘Р»
 	 */
 	public static void sendAdmins(Player player, String command) {
 		for (Player to : Bukkit.getOnlinePlayers())
@@ -179,13 +179,13 @@ public class Utils {
 	}
 
 	/**
-	 * Обновляет изображение на карте
+	 * РћР±РЅРѕРІР»СЏРµС‚ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РЅР° РєР°СЂС‚Рµ
 	 *
 	 * @param id
-	 *            - ID карты
+	 *            - ID РєР°СЂС‚С‹
 	 * @param image
-	 *            - (новое) изображение
-	 * @return ID карты
+	 *            - (РЅРѕРІРѕРµ) РёР·РѕР±СЂР°Р¶РµРЅРёРµ
+	 * @return ID РєР°СЂС‚С‹
 	 */
 	@SuppressWarnings("deprecation")
 	public static short updateMap(short id, BufferedImage image) {

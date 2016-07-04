@@ -22,11 +22,11 @@ public class Main extends JavaPlugin {
 			+ "moofPl" + ChatColor.RED + ChatColor.BOLD + "] " + ChatColor.RESET;
 
 	/**
-	 * Выполняет любую команду от имени консоли
+	 * Р’С‹РїРѕР»РЅСЏРµС‚ Р»СЋР±СѓСЋ РєРѕРјР°РЅРґСѓ РѕС‚ РёРјРµРЅРё РєРѕРЅСЃРѕР»Рё
 	 *
 	 * @param command
-	 *            - команда
-	 * @return true, если команда выполнена успешно
+	 *            - РєРѕРјР°РЅРґР°
+	 * @return true, РµСЃР»Рё РєРѕРјР°РЅРґР° РІС‹РїРѕР»РЅРµРЅР° СѓСЃРїРµС€РЅРѕ
 	 */
 	public static boolean exec(String command) {
 		return Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
@@ -55,7 +55,7 @@ public class Main extends JavaPlugin {
 	}
 
 	/**
-	 * Создаёт новый конфигурационный файл плагина
+	 * РЎРѕР·РґР°С‘С‚ РЅРѕРІС‹Р№ РєРѕРЅС„РёРіСѓСЂР°С†РёРѕРЅРЅС‹Р№ С„Р°Р№Р» РїР»Р°РіРёРЅР°
 	 */
 	public void newConfig() {
 		try {
@@ -82,7 +82,7 @@ public class Main extends JavaPlugin {
 	}
 
 	/**
-	 * Используется при выключении сервера/плагина
+	 * РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РїСЂРё РІС‹РєР»СЋС‡РµРЅРёРё СЃРµСЂРІРµСЂР°/РїР»Р°РіРёРЅР°
 	 */
 	@Override
 	public void onDisable() {
@@ -98,7 +98,7 @@ public class Main extends JavaPlugin {
 	}
 
 	/**
-	 * Используется при включении сервера/плагина
+	 * РСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РїСЂРё РІРєР»СЋС‡РµРЅРёРё СЃРµСЂРІРµСЂР°/РїР»Р°РіРёРЅР°
 	 */
 	@Override
 	public void onEnable() {
@@ -108,7 +108,7 @@ public class Main extends JavaPlugin {
 	}
 
 	/**
-	 * Перезагружает конфигурацию плагина
+	 * РџРµСЂРµР·Р°РіСЂСѓР¶Р°РµС‚ РєРѕРЅС„РёРіСѓСЂР°С†РёСЋ РїР»Р°РіРёРЅР°
 	 */
 	@SuppressWarnings("deprecation")
 	public void reloadConfiguration() {
@@ -194,7 +194,7 @@ public class Main extends JavaPlugin {
 	}
 
 	/**
-	 * Альтернатива saveConfig()
+	 * РђР»СЊС‚РµСЂРЅР°С‚РёРІР° saveConfig()
 	 */
 	public void saveCfg() {
 		saveConfig();
