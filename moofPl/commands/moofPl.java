@@ -180,7 +180,7 @@ public class moofPl implements CommandExecutor {
 				String file = args[2];
 				try {
 					if (give.getItemInHand().getType() == Material.MAP) {
-						give.getItemInHand().setDurability((short) Integer.parseInt(main.maps.get(file.toLowerCase())));
+						give.getItemInHand().setDurability(main.maps.get(file.toLowerCase()));
 						ItemMeta meta = give.getItemInHand().getItemMeta();
 						meta.setDisplayName(ChatColor.RED + file.substring(0, file.length() - 4));
 						give.getItemInHand().setItemMeta(meta);
