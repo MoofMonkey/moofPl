@@ -11,7 +11,6 @@ import org.bukkit.map.MapRenderer;
 import org.bukkit.map.MapView;
 
 public class MapRender extends MapRenderer {
-
 	public static BufferedImage writeTextOnImage(BufferedImage img, int x, int y, String fontname, int fontsize,
 			String name_color, boolean stroke, String stroke_color, String text) {
 		BufferedImage image = new BufferedImage(img.getColorModel(), img.copyData(null),
