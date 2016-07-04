@@ -169,8 +169,7 @@ public class moofPl implements CommandExecutor {
 			}
 			if (args[2].equalsIgnoreCase("null")) {
 				if (give.getItemInHand().getType() == Material.MAP) {
-					give.getItemInHand().setDurability(
-							/* Utils.createNewMap(ImageIO.read(img)) */(short) 0);
+					give.getItemInHand().setDurability((short) 0);
 					ItemMeta meta = give.getItemInHand().getItemMeta();
 					meta.setDisplayName(ChatColor.RED + "Null filled map");
 					give.getItemInHand().setItemMeta(meta);
