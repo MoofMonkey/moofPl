@@ -32,7 +32,7 @@ public class Main extends JavaPlugin {
 		return Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
 	}
 
-	public HashMap<String, String> maps = new HashMap<String, String>();
+	public HashMap<String, Short> maps = new HashMap<String, Short>();
 	public ArrayList<EnderChest> ec = new ArrayList<EnderChest>();
 
 	public Handlers candles = new Handlers(this);
@@ -156,7 +156,7 @@ public class Main extends JavaPlugin {
 		map = Bukkit.getServer().getMap((short) 0);
 		if (map == null)
 			map = Bukkit.getServer().createMap(Bukkit.getWorlds().get(0));
-		maps.put("null", Integer.toString(map.getId()));
+		maps.put("null", map.getId());
 		map.setCenterX(Integer.MAX_VALUE);
 		map.setCenterZ(Integer.MAX_VALUE);
 		try {
@@ -178,7 +178,7 @@ public class Main extends JavaPlugin {
 			map = Bukkit.getServer().getMap(i);
 			if (map == null)
 				map = Bukkit.getServer().createMap(Bukkit.getWorlds().get(0));
-			maps.put(s.toLowerCase(), Integer.toString(map.getId()));
+			maps.put(s.toLowerCase(), map.getId());
 			map.setCenterX(Integer.MAX_VALUE);
 			map.setCenterZ(Integer.MAX_VALUE);
 			try {
