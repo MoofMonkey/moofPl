@@ -10,9 +10,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class EnderChest implements Serializable {
 	private static final long serialVersionUID = -8561586620219940872L;
-	long x;
-	long y;
-	long z;
+	int x, y, z;
 	String world;
 	String name;
 	List<String> access;
@@ -35,7 +33,7 @@ public class EnderChest implements Serializable {
 	 * @param access
 	 *            - список игроков имеющих доступ к сундуку
 	 */
-	public EnderChest(long x2, long y2, long z2, String world2, String name2, List<String> access2, int slots,
+	public EnderChest(int x2, int y2, int z2, String world2, String name2, List<String> access2, int slots,
 			String slName2) {
 		x = x2;
 		y = y2;

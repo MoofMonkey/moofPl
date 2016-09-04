@@ -128,17 +128,18 @@ public class Main extends JavaPlugin {
 		ec.clear();
 		List<String> jails = getConfig().getStringList("moofPl.jails.list");
 		for (String i : jails)
-			jls.add(new Jail(getConfig().getLong("moofPl.jails." + i + ".x"),
-					getConfig().getLong("moofPl.jails." + i + ".y"), getConfig().getLong("moofPl.jails." + i + ".z"),
+			jls.add(new Jail(getConfig().getInt("moofPl.jails." + i + ".x"),
+					getConfig().getInt("moofPl.jails." + i + ".y"),
+					getConfig().getInt("moofPl.jails." + i + ".z"),
 					getConfig().getString("moofPl.jails." + i + ".name"),
 					getConfig().getString("moofPl.jails." + i + ".world")));
 		List<String> ecnames = getConfig().getStringList("moofPl.enderchests.list");
 		try {
 			for (String i : ecnames) {
 				System.out.println("[moofPl] Loading " + i + " from config...");
-				ec.add(new EnderChest(getConfig().getLong("moofPl.enderchests." + i + ".x"),
-						getConfig().getLong("moofPl.enderchests." + i + ".y"),
-						getConfig().getLong("moofPl.enderchests." + i + ".z"),
+				ec.add(new EnderChest(getConfig().getInt("moofPl.enderchests." + i + ".x"),
+						getConfig().getInt("moofPl.enderchests." + i + ".y"),
+						getConfig().getInt("moofPl.enderchests." + i + ".z"),
 						getConfig().getString("moofPl.enderchests." + i + ".world"),
 						getConfig().getString("moofPl.enderchests." + i + ".name"),
 						getConfig().getStringList("moofPl.enderchests." + i + ".canAccess"),

@@ -9,9 +9,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 public class Jail {
-	long x;
-	long y;
-	long z;
+	int x, y, z;
 	public String name;
 	String world;
 	ArrayList<Player> jailed = new ArrayList<Player>();
@@ -30,7 +28,7 @@ public class Jail {
 	 * @param world2
 	 *            - мир в котором расположена тюрьма
 	 */
-	public Jail(long x2, long y2, long z2, String name2, String world2) {
+	public Jail(int x2, int y2, int z2, String name2, String world2) {
 		x = x2;
 		y = y2;
 		z = z2;

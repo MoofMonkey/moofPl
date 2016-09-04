@@ -16,7 +16,6 @@ import org.bukkit.map.MapView;
 import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 public class Utils {
-
 	/**
 	 * Проверяет статус оператора у игрока
 	 *
