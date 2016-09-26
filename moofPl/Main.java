@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.map.MapView;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import moofPl.commands.moofPl;
+import moofPl.commands.MainCommand;
 
 public class Main extends JavaPlugin {
 	public static List<String> blockedCmds, infoCmds, canOp;
@@ -104,7 +104,7 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		Bukkit.getPluginManager().registerEvents(candles, this);
 		reloadConfiguration();
-		getCommand("moofPl").setExecutor(new moofPl(this));
+		getCommand("moofPl").setExecutor(new MainCommand(this));
 	}
 
 	/**
