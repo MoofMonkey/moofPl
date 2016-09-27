@@ -249,7 +249,13 @@ public enum MainSubCommands {
 			public void handle(Main main, Player p, String commandLabel, String[] args) {
 				main.reloadConfiguration();
 				p.sendMessage(Main.prefix + "Config reloaded!");
-				main.getLogger().warning(p.getName() + " reloaded config'o'plugin!");
+				
+				String name;
+				if(p != null && (name = p.getName()) != null) {
+					
+				} else
+					name = "Console";
+				main.getLogger().warning(name + " reloaded config'o'plugin!");
 			}
 		}
 	),
