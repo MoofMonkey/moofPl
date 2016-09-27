@@ -12,9 +12,6 @@ moofPl:
   - sudo
   canOp:
   - moofMonkey
-  - kentavo
-  - manix
-  - kuja
   jails:
     list:
       - jail
