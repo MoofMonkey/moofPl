@@ -1,18 +1,27 @@
 moofPl:
   enabled: true
   blockedCmds:
-    - pl
-    - plugins
-    - ?
+  - pl
+  - plugins
+  - null: null
   infoCmds:
-    - /set
-    - /replace
-    - /sphere
-    - /undo
-    - sudo
+  - /set
+  - /replace
+  - /sphere
+  - /undo
+  - sudo
   canOp:
-    - moofmonkey
-  jail:
-    x: 0
-    y: -6
-    z: 0
+  - moofMonkey
+  - kentavo
+  - manix
+  - kuja
+  jails:
+    list:
+      - jail
+    jail:
+      x: 0
+      y: 0
+      z: 0
+      name: Main jail
+      world: world
+  enderchests: {}
