@@ -1,6 +1,7 @@
 package moofPl;
 
 import java.io.BufferedWriter;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -8,7 +9,7 @@ import java.util.Date;
 
 import org.bukkit.entity.Player;
 
-public class PlayerLogger extends Thread {
+public class PlayerLogger extends Thread implements Closeable {
 	Main main;
 	File log;
 	File playersFolder;
@@ -49,9 +50,14 @@ public class PlayerLogger extends Thread {
 	 * @throws Throwable
 	 *             - ошибка при закрытии потоков. Никогда не бывает.
 	 */
-	public void close() throws Throwable {
-		buffwriter.close();
-		filewriter.close();
+	@Override
+	public void close() {
+		try {
+			buffwriter.close();
+			filewriter.close();
+		} catch(Throwable t) {
+			t.printStackTrace();
+		}
 	}
 
 	/**
