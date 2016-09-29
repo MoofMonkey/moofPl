@@ -295,6 +295,7 @@ public class Handlers extends Thread implements Listener {
 						e.printStackTrace();
 					}
 					pl.remove(p);
+					break;
 				}
 	}
 
