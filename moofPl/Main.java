@@ -64,19 +64,7 @@ public class Main extends JavaPlugin {
 		} catch (Throwable t) {
 			t.printStackTrace();
 		}
-		getConfig().addDefault("moofPl.blockedCmds", "");
-		getConfig().addDefault("moofPl.infoCmds", "");
-		getConfig().addDefault("moofPl.canOp", "");
-		getConfig().addDefault("moofPl.jails", "");
-		getConfig().addDefault("moofPl.jails.jail.world", "world");
-		getConfig().addDefault("moofPl.jails.jail.x", "");
-		getConfig().addDefault("moofPl.jails.jail.y", "");
-		getConfig().addDefault("moofPl.jails.jail.z", "");
-		getConfig().addDefault("moofPl.jails.jail.name", "jail");
-		getConfig().addDefault("moofPl.jails.list", "");
-		getConfig().addDefault("moofPl.enderchests", "");
-		getConfig().addDefault("moofPl.enderchests.list", "");
-		getConfig().addDefault("moofPl.enabled", "");
+		
 		getConfig().options().copyDefaults(true);
 		reloadConfig();
 	}
