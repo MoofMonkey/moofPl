@@ -85,7 +85,7 @@ public class Utils {
 		Material material = Material.getMaterial(id);
 		ItemStack item = new ItemStack(material, 64);
 		ItemMeta itemMeta = item.getItemMeta();
-		itemMeta.setDisplayName(name); ///moofPl give moofMonkey &l&5Я_упоролся &4TESTING1NS21NS2Skype:_moofMonkey 57 0
+		itemMeta.setDisplayName(name);
 		itemMeta.setLore(Arrays.asList(lore.split("1NS2")));
 		item.setItemMeta(itemMeta);
 		item.setDurability((short) meta);
