@@ -12,6 +12,9 @@ import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 public class MainCommand implements CommandExecutor {
 	Main main;
+	String[] help = new String[] {
+		"help"	
+	};
 
 	/**
 	 * Генератор нового объекта этого класса
@@ -56,11 +59,15 @@ public class MainCommand implements CommandExecutor {
 			}
 		}
 		
+		if(args.length == 0)
+			args = help;
+		
 		MainSubCommands.getExecutorByName (
 				args[0]
 		).handle (
 				main,
 				p,
+				sender,
 				commandLabel,
 				args
 		);
