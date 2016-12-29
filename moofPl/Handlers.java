@@ -125,6 +125,14 @@ public class Handlers extends Thread implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onMove(PlayerMoveEvent event) {
+		Player p = event.getPlayer();
+		
+		if (isJailed(p)) {
+			p.sendMessage(Main.prefix + ChatColor.RED + ChatColor.BOLD + "You're jailed and cannot move!");
+			event.setCancelled(true);
+			p.teleport(event.getFrom());
+		}
+		
 		if (event.getTo().getBlock().getType() == Material.STONE_PLATE
 				&& event.getTo().add(0, -1, 0).getBlock().getType() == Material.GRAVEL) {
 			event.getTo().getBlock().setType(Material.AIR);
