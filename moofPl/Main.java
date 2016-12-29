@@ -59,8 +59,6 @@ public class Main extends JavaPlugin {
 	 */
 	public void newConfig() {
 		try {
-			if(!getDataFolder().exists())
-				getDataFolder().mkdir();
 			saveDefaultConfig();
 			reloadConfig();
 		} catch (Throwable t) {
@@ -96,13 +94,22 @@ public class Main extends JavaPlugin {
 		reloadConfiguration();
 		getCommand("moofPl").setExecutor(new MainCommand(this));
 	}
+	
+	public File getDataFolder1() {
+		File f = getDataFolder();
+		
+		if(!f.exists())
+			f.mkdir();
+		
+		return f;
+	}
 
 	/**
 	 * Перезагружает конфигурацию плагина
 	 */
 	@SuppressWarnings("deprecation")
 	public void reloadConfiguration() {
-		if (!new File(getDataFolder() + File.separator + "config.yml").exists())
+		if (!new File(getDataFolder1() + File.separator + "config.yml").exists())
 			newConfig();
 		try {
 			reloadConfig();
@@ -140,7 +147,7 @@ public class Main extends JavaPlugin {
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
-		File img = new File(getDataFolder() + "/images");
+		File img = new File(getDataFolder1() + "/images");
 		MapView map;
 		MapRender mr;
 

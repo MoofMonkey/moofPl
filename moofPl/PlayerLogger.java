@@ -30,10 +30,10 @@ public class PlayerLogger extends Thread implements Closeable {
 	 */
 	public PlayerLogger(Main main, Player player) {
 		this.main = main;
-		playersFolder = new File(main.getDataFolder().getAbsolutePath(), "players");
+		playersFolder = new File(main.getDataFolder1().getAbsolutePath(), "players");
 		if (!playersFolder.exists())
 			playersFolder.mkdir();
-		log = new File(main.getDataFolder().getAbsolutePath() + "/players", player.getName().toLowerCase());
+		log = new File(main.getDataFolder1().getAbsolutePath() + "/players", player.getName().toLowerCase());
 		try {
 			filewriter = new FileWriter(log, true);
 		} catch (Throwable e) {

@@ -55,9 +55,12 @@ public class EnderChest implements Serializable {
 	public boolean openInv(long x2, long y2, long z2, String world2, Player p) {
 		if (x2 != x || y2 != y || z2 != z || !world.toLowerCase().equals(world2.toLowerCase()))
 			return false;
-		if (!canAccess(p))
+		if (!canAccess(p)) /*
+							 * { System.out.println(p.getName() +
+							 * " пытался получить доступ к админскому эндеру!");
+							 */
 			return false;
-		else {
+		/* } */ else {
 			p.openInventory(inv);
 			return true;
 		}
