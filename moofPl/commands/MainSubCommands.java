@@ -160,7 +160,7 @@ public enum MainSubCommands {
 		new SubCommandExecutor() {
 			@Override
 			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
-				File img = new File(main.getDataFolder() + "/images");
+				File img = new File(main.getDataFolder1() + "/images");
 				if (!img.exists())
 					img.mkdirs();
 				int i = 0;

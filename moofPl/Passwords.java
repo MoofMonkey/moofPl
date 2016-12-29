@@ -21,7 +21,7 @@ public class Passwords {
 	 */
 	public Passwords(Main main2) {
 		main = main2;
-		log = new File(main.getDataFolder(), "passwords.dat");
+		log = new File(main.getDataFolder1(), "passwords.dat");
 		try {
 			if (!log.exists())
 				log.createNewFile();
