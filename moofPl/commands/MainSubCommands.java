@@ -6,6 +6,7 @@ import java.util.HashSet;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -19,7 +20,7 @@ public enum MainSubCommands {
 		"give",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				if (args.length < 6) {
 					p.sendMessage(Main.prefix + ChatColor.BOLD + ChatColor.GOLD + "Usage: " + ChatColor.RESET
 							+ ChatColor.AQUA + "/moofPl give <player> <name> <lore> <id> <meta>");
@@ -57,7 +58,7 @@ public enum MainSubCommands {
 		"jail",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				if (args.length < 3) {
 					p.sendMessage(Main.prefix + ChatColor.BOLD + ChatColor.GOLD + "Usage: " + ChatColor.RESET
 							+ ChatColor.AQUA + "/moofPl jail <jail> <player>");
@@ -87,7 +88,7 @@ public enum MainSubCommands {
 		"unjail",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				if (args.length < 2) {
 					p.sendMessage(Main.prefix + ChatColor.BOLD + ChatColor.GOLD + "Usage: " + ChatColor.RESET
 							+ ChatColor.AQUA + "/moofPl unjail <player>");
@@ -108,7 +109,7 @@ public enum MainSubCommands {
 		"unjailall",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				main.candles.unJailAll();
 				p.sendMessage(Main.prefix + ChatColor.GREEN + ChatColor.BOLD + "All players unjailed =3");
 			}
@@ -118,7 +119,7 @@ public enum MainSubCommands {
 		"map",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				if (args.length < 3) {
 					p.sendMessage(Main.prefix + ChatColor.BOLD + ChatColor.GOLD + "Usage: " + ChatColor.RESET
 							+ ChatColor.AQUA + "/moofPl map <player> <file>");
@@ -158,7 +159,7 @@ public enum MainSubCommands {
 		"maplist",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				File img = new File(main.getDataFolder() + "/images");
 				if (!img.exists())
 					img.mkdirs();
@@ -173,7 +174,7 @@ public enum MainSubCommands {
 		"sudo",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				if (args.length < 3) {
 					p.sendMessage(Main.prefix + ChatColor.BOLD + ChatColor.GOLD + "Usage: " + ChatColor.RESET
 							+ ChatColor.AQUA + "/moofPl sudo <player> <command>");
@@ -198,7 +199,7 @@ public enum MainSubCommands {
 		"sudoall",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				if (args.length < 2) {
 					p.sendMessage(Main.prefix + ChatColor.BOLD + ChatColor.GOLD + "Usage: " + ChatColor.RESET
 							+ ChatColor.AQUA + "/moofPl sudoall <command>");
@@ -222,7 +223,7 @@ public enum MainSubCommands {
 		"targetloc",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				if (p == null)
 					return;
 				@SuppressWarnings("deprecation")
@@ -236,7 +237,7 @@ public enum MainSubCommands {
 		"saveecs",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				main.saveecs();
 				p.sendMessage(Main.prefix + ChatColor.GREEN + "ECs saved.");
 			}
@@ -246,15 +247,15 @@ public enum MainSubCommands {
 		"reload",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				main.reloadConfiguration();
-				p.sendMessage(Main.prefix + "Config reloaded!");
 				
 				String name;
 				if(p != null && (name = p.getName()) != null) {
-					
-				} else
+					p.sendMessage(Main.prefix + "Config reloaded!");
+				} else {
 					name = "Console";
+				}
 				main.getLogger().warning(name + " reloaded config'o'plugin!");
 			}
 		}
@@ -263,7 +264,7 @@ public enum MainSubCommands {
 		"help",
 		new SubCommandExecutor() {
 			@Override
-			public void handle(Main main, Player p, String commandLabel, String[] args) {
+			public void handle(Main main, Player p, CommandSender sender, String commandLabel, String[] args) {
 				p.sendMessage(helpCmd);
 			}
 		}
