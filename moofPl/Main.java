@@ -59,6 +59,8 @@ public class Main extends JavaPlugin {
 	 */
 	public void newConfig() {
 		try {
+			if(!getDataFolder().exists())
+				getDataFolder().mkdir();
 			saveDefaultConfig();
 			reloadConfig();
 		} catch (Throwable t) {
