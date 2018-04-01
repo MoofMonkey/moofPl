@@ -120,7 +120,7 @@ public class Utils {
 	 *            - имя предмета
 	 * @param lore
 	 *            - описание предмета. 1NS2 - разделитель строк
-	 * @param id
+	 * @param material
 	 *            - ID предмета
 	 * @param meta
 	 *            - ПодID предмета
